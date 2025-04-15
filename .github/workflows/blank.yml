@@ -1,4 +1,4 @@
-name: Deploy to Production with Approval
+name: Test
 
 on:
   workflow_dispatch:
@@ -6,8 +6,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: dev
+    environment: dev
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
