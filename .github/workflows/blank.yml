@@ -13,5 +13,5 @@ jobs:
 
       - name: Deploy to Production
         run: |
-          echo "Deploying to production..."
+          echo "Hello world"
           # Add your deployment steps here
