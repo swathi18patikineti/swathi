@@ -15,6 +15,12 @@ on:
         default: 'latest'
 
 jobs:
+  output-inputs:
+    name: Output Inputs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output Inputs
+        run: echo "${{ toJSON(github.event.inputs) }}"
   deploy:
     runs-on: ubuntu-latest
     environment:
@@ -23,8 +29,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Show Deployment Inputs for Review
-        run: |
-          echo "🚀 Deployment Inputs:"
-          echo "🔧 Environment: ${{ github.event.inputs.environment }}"
-          echo "📦 Version: ${{ github.event.inputs.version }}"
+      - name: Wait for approval
+        run: echo "Waiting for manual approval..."
+          
